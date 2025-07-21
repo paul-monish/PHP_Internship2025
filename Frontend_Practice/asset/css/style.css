@@ -1,0 +1,11 @@
+div {
+  border: 2px dashed red;
+  border-radius: 10px 10px 10px 0px;
+  cursor: pointer;
+}
+
+.text-color{
+  color: azure;
+  font-size: 20px;
+  font-weight: 700;
+}
