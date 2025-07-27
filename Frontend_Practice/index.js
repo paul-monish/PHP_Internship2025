@@ -94,7 +94,7 @@
 // console.log(arr3);
 
 
-const arr = [4, 5, 6, 7,6, 8,9];
+// const arr = [4, 5, 6, 7,6, 8,9];
 
 // for(let a of arr){
 //     console.log(a*2);
@@ -131,15 +131,101 @@ task3: then after filter add all filtered element
 //  const idx=arr.findLastIndex(x=>x>6);
 // const idx=arr.indexOf(6);
 // const idx=arr.lastIndexOf(6);
-const idx=arr.includes(77);
+// const idx=arr.includes(77);
 
-console.log(idx);
-
-
+// console.log(idx);
 
 
 
 
+// const arr2=['d','a','b','c'];
+
+// arr2.sort();
+// const arr3=arr2.toSorted();
+// const arr2=[4,12,1,5,6];
+// const arr3=arr2.toSorted((a,b)=>a-b);
+// arr2.sort((a,b)=> b-a);
+// console.log(arr2);
+
+// arr2.reverse();
+// const arr3=arr2.toReversed();
+// console.log(arr3);
+
+
+// const cars = [
+//     {
+//         type: "Volvo", year: 2020
+//     },
+//     {
+//         type: "Saab", year: 2022
+//     },
+//     {
+//         typ: "BMW", year: 2000
+//     }
+// ]
+
+// cars.sort((a,b)=>a.year-b.year);
+// console.log(cars);
+
+
+// const arr2 = [4, 12, 1, 5, 6];
+// const arr3 = [5, 6, 7, 8, 10, 12];
+
+// const arr = [...arr2, ...arr3];
+// console.log(arr);
+
+
+// const a = 5;
+// const b = 6;
+// const c=14;
+// console.log(Math.PI);
+// console.log(Math.round(4.4));
+// console.log(Math.ceil(4.4));
+// console.log(Math.floor(4.7));
+// console.log(Math.trunc(4.8));
+// console.log(Math.pow(8,2));
+// console.log(Math.sqrt(64));
+// console.log(Math.abs(-4.9));
+
+// console.log(Math.max(a,b,c));
+
+// console.log(Math.min(a,b,c));
+
+
+
+// const arr = [4, 5, 0, 2, 3];
+
+// console.log(Math.max(...arr));
+
+// console.log(Math.min(...arr));
+
+// let a=123;
+
+// console.log(typeof a.toString());
+
+// let x=5.233456;
+
+
+// console.log(x.toFixed(0));
+
+
+
+// let x="5";
+// console.log(typeof parseInt(x));
+// console.log(Number.isInteger("10"));
+// console.log(Number.isFinite(4/0));
+// console.log(Number.isNaN(4/"abc"));
+
+
+// console.log(Math.random());
+
+
+// const rand=Math.floor(Math.random()*10);//0-9
+// const rand=Math.floor(Math.random()*11);//0-10
+
+const rand=Math.floor(Math.random()*10)+1;//1-10
+
+console.log(rand);
 
 
 
