@@ -223,9 +223,108 @@ task3: then after filter add all filtered element
 // const rand=Math.floor(Math.random()*10);//0-9
 // const rand=Math.floor(Math.random()*11);//0-10
 
-const rand=Math.floor(Math.random()*10)+1;//1-10
+// const rand=Math.floor(Math.random()*10)+1;//1-10
 
-console.log(rand);
+// console.log(rand);
+
+
+// const d=new Date();
+// const d=new Date("2022-03-24");
+// console.log(d.getFullYear());
+// const month=["Jan","Feb","Mar","April","May","June","July","August"];
+// console.log(month[d.getMonth()]);
+// console.log(d.getDate());
+// d.setMonth(11)
+// console.log(d.getMonth());
+
+
+// const str="   aabbcc   ";
+// console.log(str.length);
+// console.log(str.charAt(2));
+// console.log(str.charCodeAt(2));
+// console.log(str[2]);
+// console.log(str.at(-1));
+// console.log(str.toUpperCase());
+
+// console.log(str.toLowerCase());
+
+// const newStr=str.trim();
+// const newStr=str.trimStart();
+// const newStr=str.trimEnd();
+// console.log(newStr.length);
+
+// let text="Apple, Banana, Kiwi ";
+// let slicedPart=text.slice(7,10);
+// let slicedPart=text.substr(7,3);
+// console.log(slicedPart);
+// let result=text.repeat(3);
+// console.log(result);
+
+// let str="a,b,c,d,e";
+// let arr=str.split(',')
+// console.log(arr);
+// console.log(arr.join('*'));
+
+
+
+
+let text = "Apple, kiwi, Banana, Kiwi ";
+
+// let newText=text.replace("Kiwi","Guava");
+// let newText=text.replaceAll("Kiwi","Guava");
+
+// let newText=text.replace(/kiwi/ig,"Guava");
+// console.log(newText);
+
+// console.log(text.indexOf("kiwi"));
+// let isExists=text.search(/kiwi/);
+// let isExists=text.includes("sskiwi");
+// console.log(isExists);
+
+// function add(a, b) {
+//     let c = 0;
+//     c = a + b;
+//     return c;
+// }
+
+// let a=5;
+// let b=6;
+// let res = add(a, b);
+// console.log("Addition of a="+a+" and b="+b+" is:", res);
+
+
+function add(...args) {
+    let c = 0;
+    // console.log(args.length);
+    c = args.reduce((sum, item) => {
+        sum += item;
+        return sum;
+    }, 0);
+
+    return c;
+}
+
+let a = 5;
+let b = 6;
+let res = add(a, b, 5, 6, 8, 9);
+// console.log("Addition of a="+a+" and b="+b+" is:", res);
+// console.log(`Addition of a=${a} and b=${b} is ${res}`);//String Template
+
+let num=6;
+let caseCheck=num%2;
+switch(caseCheck){
+    case 0:console.log("Even Number");
+            break;
+    case 1:
+        console.log("Odd Number");
+        break;
+    default:console.log("Case not matched!");    
+}
+
+
+
+
+
 
 
 
