@@ -268,7 +268,7 @@ task3: then after filter add all filtered element
 
 
 
-let text = "Apple, kiwi, Banana, Kiwi ";
+// let text = "Apple, Kiwi, Banana, Kiwi ";
 
 // let newText=text.replace("Kiwi","Guava");
 // let newText=text.replaceAll("Kiwi","Guava");
@@ -293,38 +293,222 @@ let text = "Apple, kiwi, Banana, Kiwi ";
 // console.log("Addition of a="+a+" and b="+b+" is:", res);
 
 
-function add(...args) {
-    let c = 0;
-    // console.log(args.length);
-    c = args.reduce((sum, item) => {
-        sum += item;
-        return sum;
-    }, 0);
+// function add(...args) {
+//     let c = 0;
+//     // console.log(args.length);
+//     c = args.reduce((sum, item) => {
+//         sum += item;
+//         return sum;
+//     }, 0);
 
-    return c;
-}
+//     return c;
+// }
 
-let a = 5;
-let b = 6;
-let res = add(a, b, 5, 6, 8, 9);
+// let a = 5;
+// let b = 6;
+// let res = add(a, b, 5, 6, 8, 9);
 // console.log("Addition of a="+a+" and b="+b+" is:", res);
 // console.log(`Addition of a=${a} and b=${b} is ${res}`);//String Template
 
-let num=6;
-let caseCheck=num%2;
-switch(caseCheck){
-    case 0:console.log("Even Number");
-            break;
-    case 1:
-        console.log("Odd Number");
-        break;
-    default:console.log("Case not matched!");    
+// let num=6;
+// let caseCheck=num%2;
+// switch(caseCheck){
+//     case 0:console.log("Even Number");
+//             break;
+//     case 1:
+//         console.log("Odd Number");
+//         break;
+//     default:console.log("Case not matched!");    
+// }
+
+
+// hoisting & returnn statement
+// console.log(greet("Alice"));
+// function greet(name) {
+//     return `Hello, ${name}!`;
+// }
+
+// const greet = (name) =>`Hello, ${name}!`;
+
+//this binding
+
+// function Person() {
+//     this.name = "Jhon";
+//     console.log(this.name);
+
+//     setTimeout(function () {
+//         this.name = "Jhon";
+//         console.log(this.name);
+
+//     }, 1000)
+// }
+
+// new Person();
+// function Person() {
+//     this.name = "Jhon";
+
+
+//     setTimeout(() => {
+
+//         console.log(this.name);
+
+//     }, 1000)
+// }
+
+// new Person();
+
+//Arguments Object
+
+// function showArgs(){
+//     console.log(arguments);
+// }
+
+// const showArgs = (...arguments) => {
+//     console.log(arguments);
+// }
+// showArgs(1, 2, 3, 45);
+
+
+//Object Literal
+// const obj = {
+//     name: 'Jhon',
+//     roll: 45,
+//     age: 22,
+//     greet: function () {
+//         return `Hello, ${this.name}`;
+//     }
+// }
+// for (const key in obj) {
+//     console.log(obj[key]);
+
+// }
+// console.log(obj.greet());
+
+//empty object pattern
+// const person={};
+// person.name="Jhon";
+// person.roll=24;
+// person.age=22;
+// person.greet=function(){
+//     return `Hello, ${this.name}`;
+// }
+
+// console.log(person.greet());
+
+//Object with new keyword
+// const person = new Object({
+//     name: 'Jhon',
+//     roll: 45,
+//     age: 22,
+//     greet: function () {
+//         return `Hello, ${this.name}`;
+//     }
+// });
+
+// person.color = "blue";
+// console.log(person.greet());
+// console.log(person["color"]);
+
+//Object Constructor
+// function Person(name,roll,age){
+//     this.name=name;
+//     this.roll=roll;
+//     this.age=age;
+// }
+
+// const obj=new Person('Jhon',25,22);
+// console.log(obj.name);
+
+
+
+const person = {
+    name: 'Jhon',
+    roll: 45,
+    age: 22,
+    uid: 4578785,
 }
 
 
+// person.age = 25;
+// Object.defineProperty(person, 'uid', {
+//     value: 4578785,
+//     writable: false,
+//     enumerable: true,
+// })
+
+// for (const key in person) {
+//     console.log(person[key]);
+// }
+// person.uid = 1234;
+// console.log(person.uid);
 
 
+//closure and lexical scope
+
+let globalVar = "I am global";
+function outer() {
+    let outerVar = "I am in outerFunction";
+    function innerFunction() {
+        let innerVar = "I am innerFunction";
+        console.log(globalVar);
+        console.log(outerVar);
+        console.log(innerVar);
+    }
+    innerFunction();
+    // console.log(innerVar);//
+}
+// outer();
+// console.log(outerVar);
 
 
+// function counter() {
+//     let count = 0;
+//     return function () {
+//         count++;
+//         return count;
+//     }
+// }
+
+// let c = counter();
+// console.log(c());
 
 
+// let promise1 = new Promise((resolve, reject) => {
+//     let error = true; // Change this to true to simulate an error
+//     if(error){
+//         reject("Promise 1 rejected");
+//     }
+//     setTimeout(() => {
+//         resolve("Promise 1 resolved");
+//     }, 1000);
+// }); 
+
+// promise1.then((result) => {
+//     console.log(result);
+// }).catch((error) => {
+//     console.error(error);
+// });
+
+function promise1() {
+    return new Promise((resolve, reject) => {
+        let error = true; // Change this to true to simulate an error
+        if (error) {
+            reject("Promise 1 rejected");
+        }
+        setTimeout(() => {
+            resolve("Promise 1 resolved");
+        }, 1000);
+    });
+}
+
+
+async function handlePromises() {
+    try {
+        const res = await promise1();
+        console.log(res);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+handlePromises();

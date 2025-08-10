@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input type="text" id="a" placeholder="Type Value of A">
+        <input type="text" id="b" placeholder="Type Value of B">
+        <button id="btn" onclick="calculateSum()">Submit</button> -->
+    <!-- <div id="app"></div> -->
+     <!-- <div id="result" ></div> -->
+
+     <!-- <form onsubmit="calculateSum(event)">
+         <input type="text" id="a" placeholder="Type Value of A">
+         <input type="text" id="b" placeholder="Type Value of B">
+         <button id="btn" type="submit">Submit</button>
+     </form>
+
+     <div id="result"></div> -->
+    <ul>
+        <li class="number">12</li>
+        <li class="number">15</li>
+        <li class="number">20</li>
+    </ul>
+
+    <div id="result"></div>
+
+</body>
+<!-- <script src="index.js"></script> -->
+<script>
+    // document.getElementById("app").innerText = "<h1>Hello, World!</h1>
+    // document.querySelector("#app").innerHTML = "<h1>Hello, World!</h1>";
+    // function calculateSum() {
+        
+    //     alert("Calculating sum...");
+    //     const a = document.getElementById("a").value;
+    //     const b = document.getElementById("b").value;
+    //     const sum = parseInt(a) + parseInt(b);
+ 
+    //     document.getElementById("result").innerText = `Sum: ${sum}`;
+    // }
+
+    // function calculateSum(event) {
+    //     event.preventDefault(); // Prevent form submission
+    //     // console.log(event.target.a.value);
+
+    //         //   const fd=new FormData(event.target);
+    //         //     const data=Object.fromEntries(fd);
+    //         //     console.log(data);
+    //         const a = event.target.a.value;
+    //         const b = event.target.b.value;
+    //         const sum = parseInt(a) + parseInt(b);
+    //         document.getElementById("result").innerText = `Sum: ${sum}`;
+    // }
+
+
+    var x=document.querySelectorAll(".number");
+    let arr=Array.from(x);
+
+
+    // console.log(Object.keys(arr));
+    // console.log(Object.values(arr));
+    // console.log(Object.entries(arr));
+
+    // let r=arr.forEach(x=>console.log(x.innerHTML));
+    // let r=arr.some((x=>{
+    //     let val=x.innerHTML;
+    //     let i=parseInt(val);
+    //     if(i>25) return true;
+    //     return false;
+    // }));
+
+    //  let r=arr.some((x=>{
+    //     let val=x.innerHTML;
+    //     let i=parseInt(val);
+    //     if(i>12) return true;
+    //     return false;
+    // }));
+
+    
+    
+    // console.log(r);
+
+    const res=arr.reduce((sum,item)=>{
+        let text=item.innerHTML;
+        let textToNumber=parseInt(text);
+        sum+=textToNumber;
+        return sum;
+    },0);
+    
+    document.getElementById('result').innerText=res;
+    
+    
+
+    // console.log(arr);
+    
+</script>
+</html
+
