@@ -19,12 +19,18 @@
      </form>
 
      <div id="result"></div> -->
-    <ul>
+    <!-- <ul>
         <li class="number">12</li>
         <li class="number">15</li>
         <li class="number">20</li>
-    </ul>
+    </ul> -->
 
+    <ul id="listItems">
+        
+    </ul>
+    <input type="text" id="list"/>
+    <button id="addBtn" >Add +</button>
+    <button id="calBtn" >Calculate</button>
     <div id="result"></div>
 
 </body>
@@ -56,8 +62,8 @@
     // }
 
 
-    var x=document.querySelectorAll(".number");
-    let arr=Array.from(x);
+    // var x=document.querySelectorAll(".number");
+    // let arr=Array.from(x);
 
 
     // console.log(Object.keys(arr));
@@ -83,18 +89,63 @@
     
     // console.log(r);
 
-    const res=arr.reduce((sum,item)=>{
-        let text=item.innerHTML;
-        let textToNumber=parseInt(text);
-        sum+=textToNumber;
-        return sum;
-    },0);
+    // const res=arr.reduce((sum,item)=>{
+    //     let text=item.innerHTML;
+    //     let textToNumber=parseInt(text);
+    //     sum+=textToNumber;
+    //     return sum;
+    // },0);
     
-    document.getElementById('result').innerText=res;
+    // document.getElementById('result').innerText=res;
     
     
 
     // console.log(arr);
+    
+
+    // let data=document.getElementsByClassName("number");
+    // // console.log(data);
+    // let dataArr=Array.from(data);
+    // console.log(dataArr);
+    // const res=dataArr.reduce((sum,item)=>{
+    //     let text=item.innerHTML;
+    //     let textToNumber=parseInt(text);
+    //     sum+=textToNumber;
+    //     return sum;
+    // },0);
+    // document.getElementById('result').innerText=res;
+
+
+    //todo calculation
+    let listItem=[];
+    let addBtn=document.getElementById('addBtn');
+    addBtn.addEventListener('click',()=>{
+        let val=document.getElementById('list').value;
+        if(val.trim() === "") {
+            alert("Please enter a value");
+            return;
+        }
+        else if(isNaN(val)){
+            alert("Please enter a valid number");
+            return;
+        }
+        
+        let list=document.getElementById('listItems');
+        list.innerHTML+=`<li class="number">${val}</li>`;
+    });
+    let calBtn=document.getElementById('calBtn');
+    calBtn.addEventListener('click',function(){
+        let numbers=document.querySelectorAll('.number');
+        if(numbers.length === 0) {
+            alert("No numbers to calculate");
+            return;
+        }
+        let numberArr=Array.from(numbers);
+        let sum=numberArr.reduce((acc,item)=>{
+            return acc+parseInt(item.innerHTML);
+        },0);
+        document.getElementById('result').innerText=`Sum: ${sum}`;
+    });
     
 </script>
 </html
