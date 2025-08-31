@@ -210,4 +210,29 @@ $arr = array(1, 2, 3, 4, 5);
 
 // arr.map(x=>x*2);//JS
 
-echo $_SERVER["PHP_SELF"];
+// echo $_SERVER["PHP_SELF"];
+// echo $_SERVER["SERVER_NAME"];
+// echo $_SERVER["HTTP_HOST"];
+// echo $_SERVER["HTTP_USER_AGENT"];
+// echo $_SERVER["SCRIPT_NAME"];
+// echo $_SERVER["HTTP_REFERER"];
+// echo $_SERVER["REQUEST_METHOD"];
+// echo $_SERVER["QUERY_STRING"];
+// echo $_SERVER["REMOTE_ADDR"];
+// echo $_SERVER["SERVER_PORT"];
+// echo $_SERVER["SERVER_PROTOCOL"];
+// echo $_SERVER["REMOTE_PORT"];
+
+// echo  $_REQUEST;
+// echo  $_GET;
+// echo $_POST;
+
+if (isset($_POST['submit'])) {
+    $name = $_POST['name'];
+    echo "Hello, " . htmlspecialchars($name);
+}
+
+if (isset($_GET['submit'])) {
+    $name = $_GET['name'];
+    echo "Hello, " . htmlspecialchars($name);
+}
