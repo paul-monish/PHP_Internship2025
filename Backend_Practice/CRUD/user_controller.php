@@ -14,10 +14,15 @@ if (isset($_POST['register'])) {
         "password" => $password,
         "address" => $address
     ];
-    if (registerUser($users) > 0) {
-        echo "Registration successful";
+    $insert_id = registerUser($users);
+    if ($insert_id > 0) {
+        echo "Registration successful, and Id is $insert_id";
     } else {
         echo "Registration failed";
     }
 }
-?>
+
+function getAllUser()
+{
+    return getUsers();
+}
